@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Card, CardMedia, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ServiceModal from './ServiceModal';
+import ScrollReveal from './common/ScrollReveal';
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
   padding: '100px 0',
@@ -82,15 +83,17 @@ const Services = () => {
   return (
     <SectionWrapper id="servicos">
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 600, letterSpacing: 2 }}>
-            Meu Serviço
-          </Typography>
-          <Typography variant="h2" sx={{ mt: 1, color: '#2D3436' }}>
-            Elevando sua Autoestima
-          </Typography>
-          <Box sx={{ width: '60px', height: '4px', bgcolor: 'primary.main', mx: 'auto', mt: 2, borderRadius: 2 }} />
-        </Box>
+        <ScrollReveal>
+          <Box sx={{ textAlign: 'center', mb: 8 }}>
+            <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 600, letterSpacing: 2 }}>
+              Meu Serviço
+            </Typography>
+            <Typography variant="h2" sx={{ mt: 1, color: '#2D3436' }}>
+              Elevando sua Autoestima
+            </Typography>
+            <Box sx={{ width: '60px', height: '4px', bgcolor: 'primary.main', mx: 'auto', mt: 2, borderRadius: 2 }} />
+          </Box>
+        </ScrollReveal>
 
         <Box
           sx={{
@@ -106,26 +109,28 @@ const Services = () => {
               key={index}
               onClick={() => handleOpenModal(service)}
             >
-              <StyledCard>
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image={service.image}
-                  alt={service.title}
-                  sx={{ transition: '0.4s ease' }}
-                />
-                <GlassBase>
-                  <Typography variant="h4" sx={{ mb: 1, fontSize: '1.75rem', fontWeight: 700 }}>
-                    {service.title}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: '#636E72', mb: 3, lineHeight: 1.7 }}>
-                    {service.description}
-                  </Typography>
-                  <Button variant="outlined" color="primary">
-                    Ver Galeria
-                  </Button>
-                </GlassBase>
-              </StyledCard>
+              <ScrollReveal delay={index * 200}>
+                <StyledCard>
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image={service.image}
+                    alt={service.title}
+                    sx={{ transition: '0.4s ease' }}
+                  />
+                  <GlassBase>
+                    <Typography variant="h4" sx={{ mb: 1, fontSize: '1.75rem', fontWeight: 700 }}>
+                      {service.title}
+                    </Typography>
+                    <Typography variant="body1" sx={{ color: '#636E72', mb: 3, lineHeight: 1.7 }}>
+                      {service.description}
+                    </Typography>
+                    <Button variant="outlined" color="primary">
+                      Ver Galeria
+                    </Button>
+                  </GlassBase>
+                </StyledCard>
+              </ScrollReveal>
             </Box>
           ))}
         </Box>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Typography, Button, Container, Grid } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import styled from '@emotion/styled';
+import ScrollReveal from './common/ScrollReveal';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 const HeroSection = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
@@ -61,44 +61,41 @@ const Hero = () => {
     <HeroSection id="home">
       <BackgroundImage />
       <HeroContent maxWidth="lg">
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={7}>
-            <Typography
-              variant="overline"
-              sx={{ color: '#fff', fontWeight: 600, letterSpacing: 2 }}
-            >
-              Arte em Maquiagem
-            </Typography>
-            <Typography
-              variant="h1"
-              sx={{
-                mb: 2,
-                color: '#2D3436',
-                fontSize: { xs: '2.5rem', md: '4rem' }
-              }}
-            >
-              Realce sua <br />
-              <span style={{ color: '#fdfdfdff' }}>Beleza Única</span>
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{
-                mb: 4,
-                color: '#636E72',
-                maxWidth: '500px',
-                fontWeight: 400,
-                fontSize: { xs: '1rem', md: '1.5rem' }
-              }}
-            >
-              Especialista em maquiagem social e artística com foco em tons suaves e elegância.
-            </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-              <Button variant="contained" color="primary" size="large" href="#servicos">
-                Nossos Serviços
-              </Button>
-            </Box>
+        <ScrollReveal>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={7}>
+              <Typography
+                variant="overline"
+                sx={{ color: '#fff', fontWeight: 600, letterSpacing: 2 }}
+              >
+                Arte em Maquiagem e Penteado
+              </Typography>
+              <Typography
+                variant="h1"
+                sx={{
+                  mb: 2,
+                  color: '#2D3436',
+                  fontSize: { xs: '2.5rem', md: '4rem' }
+                }}
+              >
+                Realce sua <br />
+                <span style={{ color: '#fdfdfdff' }}>Beleza Única</span>
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{
+                  mb: 4,
+                  color: '#636E72',
+                  maxWidth: '500px',
+                  fontWeight: 400,
+                  fontSize: { xs: '1rem', md: '1.5rem' }
+                }}
+              >
+                Especialista em maquiagem e penteado, trazendo arte e sofisticação para seu visual.
+              </Typography>
+            </Grid>
           </Grid>
-        </Grid>
+        </ScrollReveal>
       </HeroContent>
     </HeroSection>
   );

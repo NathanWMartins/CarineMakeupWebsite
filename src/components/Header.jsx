@@ -94,7 +94,7 @@ const Header = () => {
     <StyledAppBar position="fixed" scrolled={scrolled}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <img src="/LogoCarine.png" alt="Logo" width={120} height={50} />
+          <img src="/LogoCarine.png" alt="Logo" width={160} height={60} />
 
           <Box sx={{ flexGrow: 1 }} />
 
