@@ -65,7 +65,7 @@ const Hero = () => {
           <Grid item xs={12} md={7}>
             <Typography
               variant="overline"
-              sx={{ color: 'primary.main', fontWeight: 600, letterSpacing: 2 }}
+              sx={{ color: '#fff', fontWeight: 600, letterSpacing: 2 }}
             >
               Arte em Maquiagem
             </Typography>
