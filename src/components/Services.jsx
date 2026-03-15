@@ -1,0 +1,127 @@
+import React, { useState } from 'react';
+import { Box, Container, Typography, Card, CardMedia, Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import ServiceModal from './ServiceModal';
+
+const SectionWrapper = styled(Box)(({ theme }) => ({
+  padding: '100px 0',
+  backgroundColor: '#fdfbff', // Extremely light lilac/off-white
+}));
+
+const StyledCard = styled(Card)(({ theme }) => ({
+  borderRadius: '24px',
+  overflow: 'hidden',
+  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+  transition: 'all 0.4s ease-in-out',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  border: '1px solid rgba(226, 169, 241, 0.2)',
+  background: '#fff',
+  cursor: 'pointer',
+  '&:hover': {
+    transform: 'translateY(-10px)',
+    boxShadow: '0 20px 40px rgba(226, 169, 241, 0.2)',
+    borderColor: '#e2a9f1',
+  },
+}));
+
+const GlassBase = styled(Box)(({ theme }) => ({
+  background: 'rgba(255, 255, 255, 0.6)',
+  backdropFilter: 'blur(10px)',
+  borderTop: '1px solid rgba(255, 255, 255, 0.3)',
+  padding: '24px',
+  marginTop: 'auto',
+}));
+
+const services = [
+  {
+    title: 'Maquiagem Social',
+    description: 'Transformamos seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza natural com sofisticação.',
+    image: '/service_makeup.jpg',
+    gallery: ['/makeup_1.png', '/makeup_2.png'],
+  },
+  {
+    title: 'Penteados Exclusivos',
+    description: 'Do clássico ao moderno, criamos o penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
+    image: '/service_hairstyle.png',
+    gallery: ['/hairstyle_1.png', '/service_hairstyle.png'],
+  },
+];
+
+const Services = () => {
+  const [selectedService, setSelectedService] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = (service) => {
+    setSelectedService(service);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedService(null);
+  };
+
+  return (
+    <SectionWrapper id="servicos">
+      <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 600, letterSpacing: 2 }}>
+            Meu Serviço
+          </Typography>
+          <Typography variant="h2" sx={{ mt: 1, color: '#2D3436' }}>
+            Elevando sua Autoestima
+          </Typography>
+          <Box sx={{ width: '60px', height: '4px', bgcolor: 'primary.main', mx: 'auto', mt: 2, borderRadius: 2 }} />
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: 4,
+            justifyContent: 'center'
+          }}
+        >
+          {services.map((service, index) => (
+            <Box
+              sx={{ flex: 1, maxWidth: { xs: '100%', sm: '500px' } }}
+              key={index}
+              onClick={() => handleOpenModal(service)}
+            >
+              <StyledCard>
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image={service.image}
+                  alt={service.title}
+                  sx={{ transition: '0.4s ease' }}
+                />
+                <GlassBase>
+                  <Typography variant="h4" sx={{ mb: 1, fontSize: '1.75rem', fontWeight: 700 }}>
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: '#636E72', mb: 3, lineHeight: 1.7 }}>
+                    {service.description}
+                  </Typography>
+                  <Button variant="outlined" color="primary">
+                    Ver Galeria
+                  </Button>
+                </GlassBase>
+              </StyledCard>
+            </Box>
+          ))}
+        </Box>
+
+        <ServiceModal
+          open={modalOpen}
+          onClose={handleCloseModal}
+          service={selectedService}
+        />
+      </Container>
+    </SectionWrapper>
+  );
+};
+
+export default Services;
