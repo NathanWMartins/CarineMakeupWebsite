@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Modal, Box, Typography, IconButton, Fade, Backdrop } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Modal, Box, Typography, IconButton, Fade, Backdrop, Button, Stack } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -17,14 +17,14 @@ const ModalContent = styled(Box)(({ theme }) => ({
   border: '1px solid rgba(255, 255, 255, 0.5)',
   borderRadius: '32px',
   boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2)',
-  padding: '40px 20px', // More horizontal breathing room
-  width: '90%',
-  maxWidth: '700px', // Slightly smaller modal
+  padding: '40px 20px',
+  width: '95%',
+  maxWidth: '800px',
   maxHeight: '90vh',
   position: 'relative',
   outline: 'none',
   textAlign: 'center',
-  overflow: 'hidden',
+  overflowY: 'auto',
 }));
 
 const CarouselContainer = styled(Box)({
@@ -36,9 +36,9 @@ const CarouselContainer = styled(Box)({
   overflow: 'hidden',
   borderRadius: '24px',
   width: '100%',
-  maxWidth: '600px', // Smaller carousel area
+  maxWidth: '450px',
   margin: '24px auto 0',
-  aspectRatio: '16/9',
+  aspectRatio: '4/5',
   background: 'rgba(0,0,0,0.05)',
 });
 
@@ -60,12 +60,44 @@ const NavButton = styled(IconButton)({
   color: '#000',
 });
 
+const CategoryButton = styled(Button)(({ theme, active }) => ({
+  borderRadius: '12px',
+  padding: '8px 20px',
+  transition: 'all 0.3s ease',
+  backgroundColor: active ? '#e2a9f1' : 'rgba(255, 255, 255, 0.5)',
+  color: active ? '#fff' : '#2D3436',
+  backdropFilter: 'blur(10px)',
+  border: '1px solid rgba(255, 255, 255, 0.3)',
+  '&:hover': {
+    backgroundColor: active ? '#b376c1' : 'rgba(255, 255, 255, 0.8)',
+  },
+}));
+
 const ServiceModal = ({ open, onClose, service }) => {
   const [activeStep, setActiveStep] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  // Initialize gallery based on service type
+  const gallery = selectedCategory
+    ? selectedCategory.gallery
+    : (service?.gallery || []);
+
+  const maxSteps = gallery.length;
+
+  useEffect(() => {
+    if (service?.categories) {
+      setSelectedCategory(service.categories[0]);
+    } else {
+      setSelectedCategory(null);
+    }
+    setActiveStep(0);
+  }, [service]);
+
+  useEffect(() => {
+    setActiveStep(0);
+  }, [selectedCategory]);
 
   if (!service) return null;
-
-  const maxSteps = service.gallery.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
@@ -105,9 +137,27 @@ const ServiceModal = ({ open, onClose, service }) => {
           <Typography variant="h3" sx={{ mb: 1, fontWeight: 800, fontSize: { xs: '1.75rem', md: '2.5rem' } }}>
             {service.title}
           </Typography>
-          <Typography variant="body1" sx={{ color: '#444', mx: 'auto', maxWidth: '500px' }}>
-            Arraste ou use as setas para ver nossa galeria.
-          </Typography>
+
+          {/* Category selection - only for Hairstyles */}
+          {service.categories && (
+            <Stack
+              direction="row"
+              spacing={2}
+              justifyContent="center"
+              sx={{ mb: 4, mt: 2, flexWrap: 'wrap', gap: 1 }}
+            >
+              {service.categories.map((cat) => (
+                <CategoryButton
+                  key={cat.id}
+                  active={selectedCategory?.id === cat.id}
+                  onClick={() => setSelectedCategory(cat)}
+                  variant="text"
+                >
+                  {cat.label}
+                </CategoryButton>
+              ))}
+            </Stack>
+          )}
 
           <CarouselContainer>
             {maxSteps > 1 && (
@@ -121,16 +171,20 @@ const ServiceModal = ({ open, onClose, service }) => {
               </>
             )}
 
-            <Fade in={true} timeout={500} key={activeStep}>
-              <CarouselImage
-                src={service.gallery[activeStep]}
-                alt={`${service.title} item ${activeStep + 1}`}
-              />
-            </Fade>
+            {maxSteps > 0 ? (
+              <Fade in={true} timeout={500} key={`${selectedCategory?.id}-${activeStep}`}>
+                <CarouselImage
+                  src={gallery[activeStep]}
+                  alt={`${service.title} item ${activeStep + 1}`}
+                />
+              </Fade>
+            ) : (
+              <Typography variant="body2" sx={{ p: 4 }}>Nenhuma imagem disponível.</Typography>
+            )}
 
             {/* Pagination dots */}
             <Box sx={{ position: 'absolute', bottom: 16, display: 'flex', gap: 1 }}>
-              {service.gallery.map((_, index) => (
+              {gallery.map((_, index) => (
                 <Box
                   key={index}
                   sx={{

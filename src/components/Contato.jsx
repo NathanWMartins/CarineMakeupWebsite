@@ -83,12 +83,12 @@ function Contato() {
               </StyledIconButton>
               <Box textAlign="left" sx={{ overflow: 'hidden' }}>
                 <Typography variant="caption" sx={{ display: 'block', opacity: 0.7 }}>Instagram</Typography>
-                <Typography 
-                  variant="h6" 
-                  fontWeight="bold" 
-                  sx={{ 
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  sx={{
                     color: '#636E72',
-                    fontSize: { xs: '0.9rem', sm: '1.25rem' }, // Responsive font size
+                    fontSize: { xs: '0.8rem', sm: '1.25rem' },
                     wordBreak: 'break-all'
                   }}
                 >
@@ -97,21 +97,21 @@ function Contato() {
               </Box>
             </SocialLink>
 
-            <SocialLink href="https://wa.me/5549998296888" target="_blank">
+            <SocialLink href="https://wa.me/5549998284186" target="_blank">
               <StyledIconButton size="large">
                 <WhatsApp fontSize="large" />
               </StyledIconButton>
               <Box textAlign="left">
                 <Typography variant="caption" sx={{ display: 'block', opacity: 0.7 }}>WhatsApp</Typography>
-                <Typography 
-                  variant="h6" 
-                  fontWeight="bold" 
-                  sx={{ 
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  sx={{
                     color: '#636E72',
-                    fontSize: { xs: '0.9rem', sm: '1.25rem' } // Responsive font size
+                    fontSize: { xs: '0.8rem', sm: '1.25rem' }
                   }}
                 >
-                  (49) 9 9829-6888
+                  (49) 9 9828-4186
                 </Typography>
               </Box>
             </SocialLink>

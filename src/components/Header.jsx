@@ -107,7 +107,7 @@ const Header = () => {
             variant={(scrolled || isContactSection) ? "contained" : "outlined"}
             color="primary"
             component="a"
-            href="https://wa.me/5549998296888"
+            href="https://wa.me/5549998284186"
             target="_blank"
             sx={{
               ml: 1,

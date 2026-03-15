@@ -5,7 +5,7 @@ import ServiceModal from './ServiceModal';
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
   padding: '100px 0',
-  backgroundColor: '#fdfbff', // Extremely light lilac/off-white
+  backgroundColor: '#fdfbff',
 }));
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -37,15 +37,31 @@ const GlassBase = styled(Box)(({ theme }) => ({
 const services = [
   {
     title: 'Maquiagem Social',
-    description: 'Transformamos seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza natural com sofisticação.',
+    description: 'Seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza natural com sofisticação.',
     image: '/service_makeup.jpg',
     gallery: ['/makeup_1.png', '/makeup_2.png'],
   },
   {
     title: 'Penteados Exclusivos',
-    description: 'Do clássico ao moderno, criamos o penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
-    image: '/service_hairstyle.png',
-    gallery: ['/hairstyle_1.png', '/service_hairstyle.png'],
+    description: 'Do clássico ao moderno, o penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
+    image: '/cabelo_coque.jpeg',
+    categories: [
+      {
+        id: 'coque',
+        label: 'Coque',
+        gallery: ['/cabelo_coque.jpeg'],
+      },
+      {
+        id: 'rabo',
+        label: 'Rabo',
+        gallery: ['/cabelo_rabo.jpeg'],
+      },
+      {
+        id: 'semipreso',
+        label: 'Semipreso',
+        gallery: ['/cabelo_semipreso.jpeg'],
+      }
+    ]
   },
 ];
 
