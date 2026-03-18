@@ -37,7 +37,7 @@ const GlassBase = styled(Box)(({ theme }) => ({
 
 const services = [
   {
-    title: 'Maquiagem',
+    title: 'Maquiagens',
     description: 'Seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza com sofisticação.',
     image: '/avaliacoes/avaliacao_bruna.jpeg',
     gallery: ['/avaliacoes/avaliacao_bruna.jpeg', '/makeup_2.png'],
