@@ -13,8 +13,9 @@ const HeroSection = styled(Box)(({ theme }) => ({
 
   [theme.breakpoints.down('md')]: {
     minHeight: '80vh',
-    paddingTop: '120px',
-    paddingBottom: '40px'
+    height: '80vh',
+    paddingTop: '100px',
+    paddingBottom: '20px'
   }
 }));
 
@@ -22,7 +23,7 @@ const BackgroundImage = styled('div')(({ theme }) => ({
   position: 'absolute',
   top: 0,
   right: 0,
-  width: '70%',
+  width: '60%',
   height: '100%',
   backgroundImage: 'url("/Carine.png")',
   backgroundSize: 'cover',
@@ -30,8 +31,9 @@ const BackgroundImage = styled('div')(({ theme }) => ({
   zIndex: 0,
 
   [theme.breakpoints.down('md')]: {
-    width: '100%',
-    backgroundPosition: 'top',
+    width: '120%',
+    height: '100%',
+    backgroundPosition: 'bottom',
   },
 
   '&::after': {
