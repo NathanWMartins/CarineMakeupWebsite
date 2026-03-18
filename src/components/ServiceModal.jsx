@@ -25,6 +25,55 @@ const ModalContent = styled(Box)(({ theme }) => ({
   outline: 'none',
   textAlign: 'center',
   overflowY: 'auto',
+  scrollbarWidth: 'none',
+  '&::-webkit-scrollbar': { display: 'none' },
+}));
+
+const PriceTag = styled(Box)(({ theme }) => ({
+  background: 'rgba(226, 169, 241, 0.2)',
+  padding: '8px 24px',
+  borderRadius: '50px',
+  display: 'inline-block',
+  margin: '16px 0',
+  border: '1px solid rgba(226, 169, 241, 0.3)',
+}));
+
+const PricingList = styled(Stack)(({ theme }) => ({
+  marginTop: '16px',
+  gap: '12px',
+  [theme.breakpoints.down('sm')]: {
+    gap: '6px',
+  },
+  alignItems: 'center',
+  flexDirection: 'row',
+  flexWrap: 'nowrap',
+  justifyContent: 'center',
+  width: '100%',
+}));
+
+const PricingItem = styled(Box)(({ theme }) => ({
+  background: 'rgba(255, 255, 255, 0.5)',
+  padding: '12px 16px',
+  [theme.breakpoints.down('sm')]: {
+    padding: '8px 4px',
+  },
+  borderRadius: '16px',
+  flexDirection: 'column',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  border: '1px solid rgba(226, 169, 241, 0.1)',
+  transition: 'all 0.3s ease',
+  flex: '1 1 auto',
+  minWidth: '120px',
+  [theme.breakpoints.down('sm')]: {
+    minWidth: '85px',
+  },
+  maxWidth: '220px',
+  '&:hover': {
+    background: 'rgba(226, 169, 241, 0.1)',
+    transform: 'scale(1.02)',
+  },
 }));
 
 const CarouselContainer = styled(Box)({
@@ -137,6 +186,29 @@ const ServiceModal = ({ open, onClose, service }) => {
           <Typography variant="h3" sx={{ mb: 1, fontWeight: 800, fontSize: { xs: '1.75rem', md: '2.5rem' } }}>
             {service.title}
           </Typography>
+
+          {service.price && (
+            <PriceTag>
+              <Typography variant="h6" sx={{ color: '#2D3436', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                {service.price}
+              </Typography>
+            </PriceTag>
+          )}
+
+          {service.pricing && (
+            <PricingList>
+              {service.pricing.map((item, index) => (
+                <PricingItem key={index}>
+                  <Typography variant="body1" sx={{ fontWeight: 600, color: '#2D3436', fontSize: { xs: '0.8rem', sm: '1rem' } }}>
+                    {item.label}
+                  </Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 700, fontSize: { xs: '0.85rem', sm: '1.1rem' }, color: '#d447f7ff', whiteSpace: 'nowrap' }}>
+                    {item.value}
+                  </Typography>
+                </PricingItem>
+              ))}
+            </PricingList>
+          )}
 
           {/* Category selection - only for Hairstyles */}
           {service.categories && (

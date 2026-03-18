@@ -37,14 +37,20 @@ const GlassBase = styled(Box)(({ theme }) => ({
 
 const services = [
   {
-    title: 'Maquiagem Social',
-    description: 'Seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza natural com sofisticação.',
-    image: '/service_makeup.jpg',
-    gallery: ['/makeup_1.png', '/makeup_2.png'],
+    title: 'Maquiagem',
+    description: 'Seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza com sofisticação.',
+    image: '/avaliacoes/avaliacao_bruna.jpeg',
+    gallery: ['/avaliacoes/avaliacao_bruna.jpeg', '/makeup_2.png'],
+    pricing: [
+      { label: 'Express', value: 'R$ 100,00' },
+      { label: 'Social', value: 'R$ 150,00' },
+      { label: 'Blindada', value: 'R$ 190,00' }
+    ]
   },
   {
     title: 'Penteados Exclusivos',
     description: 'Do clássico ao moderno, o penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
+    price: 'R$ 150,00',
     image: '/cabelo_coque.jpeg',
     categories: [
       {

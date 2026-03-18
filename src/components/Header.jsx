@@ -101,6 +101,7 @@ const Header = () => {
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
             <NavButton scrolled={scrolled} component="a" href="#home">Home</NavButton>
             <NavButton scrolled={scrolled} component="a" href="#servicos">Serviços</NavButton>
+            <NavButton scrolled={scrolled} component="a" href="#avaliacoes">Avaliações</NavButton>
             <NavButton scrolled={scrolled} component="a" href="#contato">Contato</NavButton>
           </Box>
           <Button
