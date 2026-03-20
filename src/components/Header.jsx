@@ -100,6 +100,7 @@ const Header = () => {
 
           <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
             <NavButton scrolled={scrolled} component="a" href="#home">Home</NavButton>
+            <NavButton scrolled={scrolled} component="a" href="#sobre">Sobre</NavButton>
             <NavButton scrolled={scrolled} component="a" href="#servicos">Serviços</NavButton>
             <NavButton scrolled={scrolled} component="a" href="#avaliacoes">Avaliações</NavButton>
             <NavButton scrolled={scrolled} component="a" href="#contato">Contato</NavButton>
@@ -114,7 +115,7 @@ const Header = () => {
               ml: 1,
               borderColor: scrolled ? 'transparent' : (isContactSection ? '#fff' : '#000'),
               bgcolor: isContactSection ? '#fff !important' : (scrolled ? 'primary.main' : 'transparent'),
-              color: isContactSection ? 'primary.main !important' : '#000',
+              color: isContactSection ? 'primary.main !important' : '#fff',
               fontSize: { xs: '0.75rem', sm: '0.875rem' },
               padding: { xs: '6px 12px', sm: '10px 24px' },
               fontWeight: 700,

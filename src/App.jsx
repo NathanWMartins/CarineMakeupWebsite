@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Avaliacoes from './components/Avaliacoes';
 import Contato from './components/Contato';
+import Sobre from './components/Sobre';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <main>
           <Hero />
+          <Sobre />
           <Services />
           <Avaliacoes />
           <Contato />

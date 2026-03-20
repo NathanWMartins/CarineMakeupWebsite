@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Container, Modal, IconButton, Fade, Backdrop } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
-import './Testimonials.css';
+import '../css/Testimonials.css';
 import styled from '@emotion/styled';
 import ScrollReveal from './common/ScrollReveal';
 
@@ -21,21 +21,15 @@ const avaliacoes = [
   },
   {
     id: 3,
-    name: 'Carla Oliveira',
-    text: 'Fiz minha maquiagem de noiva com ela e não poderia ter escolhido melhor. Foi um sonho realizado!',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400',
+    name: 'Rafaela Jung',
+    text: 'Amei o atendimento. Carine fez o meu penteado e maquiagem para a minha formatura. Ficou simplesmente impecável, amei cada detalhe. Os produtos utilizados são de alta qualidade e a maquiagem durou o dia inteiro.',
+    image: 'avaliacoes/avaliacao_rafa.jpeg',
   },
   {
     id: 4,
-    name: 'Daniela Souza',
-    text: 'Trabalho incrível! Além de talentosa, a Carine é uma pessoa doce e muito profissional.',
-    image: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=80&w=400',
-  },
-  {
-    id: 5,
-    name: 'Fernanda Lima',
-    text: 'Melhor maquiadora da região. Os produtos são de altíssima qualidade e o resultado é sempre luxuoso.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400',
+    name: 'Bruna Bruckmann',
+    text: 'Amei a maquiagem e o cabelo, ficaram super lindos. O cabelo durou muito, assim como a maquiagem, passei o dia toda com ela, não transferiu e não borrou. Seu atendimento foi ótimo, incrível pessoa e profissional.',
+    image: 'avaliacoes/avaliacao_bruna.jpeg',
   },
 ];
 
