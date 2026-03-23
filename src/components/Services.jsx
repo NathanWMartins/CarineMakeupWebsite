@@ -45,8 +45,8 @@ const services = [
   {
     title: 'Maquiagens',
     description: 'Seu olhar com técnicas exclusivas para eventos, festas e ocasiões especiais. Realce sua beleza com sofisticação.',
-    image: '/avaliacoes/avaliacao_bruna.jpeg',
-    gallery: ['/avaliacoes/avaliacao_bruna.jpeg', '/makeup_2.png'],
+    image: '/makeup/makeup_rafaela2.jpeg',
+    gallery: ['/avaliacoes/avaliacao_bruna.jpeg', '/makeup/makeup_rafaela.png'],
     pricing: [
       { label: 'Express', value: 'R$ 100,00' },
       { label: 'Social', value: 'R$ 150,00' },
@@ -57,22 +57,22 @@ const services = [
     title: 'Penteados Exclusivos',
     description: 'Do clássico ao moderno, o penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
     price: 'R$ 150,00',
-    image: '/cabelo_coque.jpeg',
+    image: '/cabelo/cabelo_coque.jpeg',
     categories: [
       {
         id: 'coque',
         label: 'Coque',
-        gallery: ['/cabelo_coque.jpeg'],
+        gallery: ['/cabelo/cabelo_coque.jpeg'],
       },
       {
         id: 'rabo',
         label: 'Rabo',
-        gallery: ['/cabelo_rabo.jpeg'],
+        gallery: ['/cabelo/cabelo_rabo.jpeg'],
       },
       {
         id: 'semipreso',
         label: 'Semipreso',
-        gallery: ['/cabelo_semipreso.jpeg'],
+        gallery: ['/cabelo/cabelo_semipreso.jpeg'],
       }
     ]
   },
@@ -80,8 +80,8 @@ const services = [
     title: 'Curso de Auto Maquiagem',
     description: 'Curso personalizado para você dominar a arte da maquiagem no seu dia a dia.',
     price: '',
-    image: '/makeup_2.png',
-    gallery: ['/makeup_2.png']
+    image: '/makeup/makeup_2.png',
+    gallery: ['/makeup/makeup_2.png']
   },
 ];
 
