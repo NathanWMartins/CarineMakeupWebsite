@@ -34,8 +34,8 @@ const avaliacoes = [
 ];
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
-  padding: '100px 0',
-  backgroundColor: '#fdfbff',
+  padding: '140px 0',
+  backgroundColor: '#fff',
 }));
 
 const infiniteTestimonials = [...avaliacoes, ...avaliacoes];
@@ -57,14 +57,17 @@ const Avaliacoes = () => {
     <SectionWrapper id="avaliacoes">
       <Box component="section" id="depoimentos" className="testimonials-container">
         <ScrollReveal>
-          <Container maxWidth="lg" sx={{ mb: 6 }}>
-            <Typography variant="h2" align="center" gutterBottom sx={{ color: '#222', mb: 2 }}>
-              Avaliação Clientes
+          <Container maxWidth="lg" sx={{ mb: 8 }}>
+            <Typography variant="overline" align="center" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3, display: 'block', mb: 1 }}>
+              DEPOIMENTOS
             </Typography>
-            <Typography variant="body1" align="center" sx={{ color: '#666', mb: 2, maxWidth: '700px', mx: 'auto' }}>
+            <Typography variant="h2" align="center" sx={{ mb: 2 }}>
+              Avaliação de Clientes
+            </Typography>
+            <Typography variant="body1" align="center" sx={{ color: 'text.secondary', mb: 1, maxWidth: '700px', mx: 'auto', fontSize: '1.1rem' }}>
               Confira o que minhas clientes estão dizendo sobre suas experiências e transformações.
             </Typography>
-            <Typography variant="body2" align="center" sx={{ color: '#787878ff', mb: 4, maxWidth: '700px', mx: 'auto' }}>
+            <Typography variant="body2" align="center" sx={{ color: 'primary.main', fontWeight: 600, mb: 4, maxWidth: '700px', mx: 'auto' }}>
               Clique nas avaliações e veja os resultados!
             </Typography>
           </Container>

@@ -5,12 +5,12 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import ScrollReveal from './common/ScrollReveal';
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
-  padding: '120px 0',
+  padding: '140px 0',
   backgroundColor: '#fff',
   position: 'relative',
   overflow: 'hidden',
   [theme.breakpoints.down('sm')]: {
-    padding: '80px 0',
+    padding: '100px 0',
   },
 }));
 

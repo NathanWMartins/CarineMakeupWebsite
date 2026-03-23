@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Avaliacoes from './components/Avaliacoes';
 import Contato from './components/Contato';
 import Sobre from './components/Sobre';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Avaliacoes />
           <Contato />
         </main>
+        <Footer />
       </Box>
     </ThemeProvider>
   );

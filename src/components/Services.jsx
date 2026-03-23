@@ -5,34 +5,40 @@ import ServiceModal from './ServiceModal';
 import ScrollReveal from './common/ScrollReveal';
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
-  padding: '100px 0',
-  backgroundColor: '#fdfbff',
+  padding: '140px 0',
+  backgroundColor: '#fafaff',
 }));
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  borderRadius: '24px',
+  borderRadius: '32px',
   overflow: 'hidden',
-  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-  transition: 'all 0.4s ease-in-out',
+  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
+  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  border: '1px solid rgba(226, 169, 241, 0.2)',
+  border: '1px solid rgba(226, 169, 241, 0.15)',
   background: '#fff',
   cursor: 'pointer',
   '&:hover': {
-    transform: 'translateY(-10px)',
-    boxShadow: '0 20px 40px rgba(226, 169, 241, 0.2)',
+    transform: 'translateY(-12px)',
+    boxShadow: '0 25px 50px rgba(226, 169, 241, 0.15)',
     borderColor: '#e2a9f1',
+    '& .card-media': {
+      transform: 'scale(1.05)',
+    }
   },
 }));
 
 const GlassBase = styled(Box)(({ theme }) => ({
-  background: 'rgba(255, 255, 255, 0.6)',
+  background: 'rgba(255, 255, 255, 0.7)',
   backdropFilter: 'blur(10px)',
   borderTop: '1px solid rgba(255, 255, 255, 0.3)',
-  padding: '24px',
+  padding: '32px',
   marginTop: 'auto',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '12px'
 }));
 
 const services = [
@@ -70,6 +76,13 @@ const services = [
       }
     ]
   },
+  {
+    title: 'Curso de Auto Maquiagem',
+    description: 'Curso personalizado para você dominar a arte da maquiagem no seu dia a dia.',
+    price: '',
+    image: '/makeup_2.png',
+    gallery: ['/makeup_2.png']
+  },
 ];
 
 const Services = () => {
@@ -92,7 +105,7 @@ const Services = () => {
         <ScrollReveal>
           <Box sx={{ textAlign: 'center', mb: 8 }}>
             <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 600, letterSpacing: 2 }}>
-              Meu Serviço
+              Meus Serviços
             </Typography>
             <Typography variant="h2" sx={{ mt: 1, color: '#2D3436' }}>
               Elevando sua Autoestima
@@ -103,8 +116,8 @@ const Services = () => {
 
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
             gap: 4,
             justifyContent: 'center'
           }}
@@ -122,16 +135,17 @@ const Services = () => {
                     height="300"
                     image={service.image}
                     alt={service.title}
-                    sx={{ transition: '0.4s ease' }}
+                    className="card-media"
+                    sx={{ transition: '0.6s cubic-bezier(0.4, 0, 0.2, 1)' }}
                   />
                   <GlassBase>
-                    <Typography variant="h4" sx={{ mb: 1, fontSize: '1.75rem', fontWeight: 700 }}>
+                    <Typography variant="h4" sx={{ mb: 0.5, fontSize: '1.75rem', fontWeight: 800 }}>
                       {service.title}
                     </Typography>
-                    <Typography variant="body1" sx={{ color: '#636E72', mb: 3, lineHeight: 1.7 }}>
+                    <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2, lineHeight: 1.7 }}>
                       {service.description}
                     </Typography>
-                    <Button variant="outlined" color="primary">
+                    <Button variant="contained" color="primary" fullWidth sx={{ py: 1.5 }}>
                       Ver Galeria
                     </Button>
                   </GlassBase>

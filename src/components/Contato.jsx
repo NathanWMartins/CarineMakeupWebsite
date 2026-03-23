@@ -6,7 +6,7 @@ import GlassIcons from './common/GlassIcons';
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const ContactWrapper = styled(Box)(({ theme }) => ({
-  padding: '120px 0',
+  padding: '140px 0',
   backgroundColor: theme.palette.primary.main,
   position: 'relative',
   overflow: 'hidden',
@@ -32,19 +32,19 @@ const ContactBox = styled(Box)(({ theme }) => ({
 }));
 
 const items = [
-  { 
-    icon: <FaInstagram />, 
-    color: 'instagram', 
-    label: 'Instagram', 
+  {
+    icon: <FaInstagram />,
+    color: 'instagram',
+    label: 'Instagram',
     value: '@carineburniermakeup',
-    href: 'https://www.instagram.com/carineburniermakeup/' 
+    href: 'https://www.instagram.com/carineburniermakeup/'
   },
-  { 
-    icon: <FaWhatsapp />, 
-    color: 'whatsapp', 
-    label: 'WhatsApp', 
+  {
+    icon: <FaWhatsapp />,
+    color: 'whatsapp',
+    label: 'WhatsApp',
     value: '(49) 9 9828-4186',
-    href: 'https://wa.me/5549998284186' 
+    href: 'https://wa.me/5549998284186'
   },
 ];
 
@@ -72,13 +72,7 @@ function Contato() {
             </Typography>
 
             <Box sx={{ display: 'flex', justifyContent: 'center', overflow: 'visible' }}>
-               <GlassIcons items={items} />
-            </Box>
-
-            <Box sx={{ mt: 10 }}>
-              <Typography variant="body2" sx={{ color: '#2D3436', opacity: 0.6 }}>
-                © 2026 Studio Burnier. Todos os direitos reservados.
-              </Typography>
+              <GlassIcons items={items} />
             </Box>
           </ContactBox>
         </ScrollReveal>
