@@ -54,8 +54,8 @@ const services = [
     ]
   },
   {
-    title: 'Penteados Exclusivos',
-    description: 'Do clássico ao moderno, o penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
+    title: 'Penteados',
+    description: 'O penteado perfeito para emoldurar seu rosto e completar seu visual com elegância e durabilidade.',
     price: 'R$ 150,00',
     image: '/cabelo/cabelo_coque.jpeg',
     categories: [
